@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Env
+.env
+.env.*
+
+# Uploads
+uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+.DS_Store

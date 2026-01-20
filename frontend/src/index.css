@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------
+   BASE STYLES (GLOBAL THEME)
+-------------------------------- */
+@layer base {
+  body {
+    @apply 
+      min-h-screen
+      bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50
+      text-gray-900
+      transition-colors duration-300
+      dark:bg-gray-900
+      dark:text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  p, span, li, label {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+}
+
+/* -------------------------------
+   COMPONENT STYLES
+-------------------------------- */
+@layer components {
+  .card {
+    @apply 
+      bg-white dark:bg-gray-800
+      rounded-2xl
+      shadow-lg
+      p-6
+      border border-gray-100 dark:border-gray-700
+      transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply 
+      bg-gradient-to-r from-blue-500 to-purple-600
+      hover:from-blue-600 hover:to-purple-700
+      text-white
+      font-semibold
+      py-3 px-6
+      rounded-xl
+      transition-all duration-200
+      shadow-lg
+      hover:shadow-xl
+      disabled:opacity-50
+      disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply 
+      bg-white dark:bg-gray-800
+      text-blue-600 dark:text-blue-400
+      border border-blue-500
+      py-2 px-5
+      rounded-xl
+      transition-all duration-200
+      hover:bg-blue-50 dark:hover:bg-gray-700;
+  }
+
+  .input-field {
+    @apply 
+      w-full
+      px-4 py-3
+      rounded-xl
+      border border-gray-300 dark:border-gray-600
+      bg-white dark:bg-gray-700
+      text-gray-900 dark:text-gray-100
+      placeholder-gray-400 dark:placeholder-gray-300
+      focus:outline-none
+      focus:ring-2 focus:ring-blue-400;
+  }
+}
+
+/* -------------------------------
+   FLASHCARD FLIP FIX
+-------------------------------- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.flashcard {
+  transition: transform 0.6s ease;
+}
+
+/* Flashcard faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.card-face-front {
+  transform: rotateY(0deg);
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
