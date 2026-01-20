@@ -113,6 +113,7 @@ npm run dev
 *Frontend runs on http://localhost:5173*
 
 ---
+live : https://ai-powered-study-buddy-frontend.onrender.com/
 
 ## 💡 How to Use
 
